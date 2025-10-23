@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <iostream>
 
-int factorial (int number);
+long long factorial (long number);
 
 int main()
-{
-    std::cout << factorial(10);
+{   
+    long answer;
+    std::cout << "Factorial of? ";
+    std::cin >> answer;
+    std::cout << factorial(answer) << std::endl;
     return 0;
 
 }
 
-long long factorial(long long number)
+long long factorial(long number)
 {
     if (number == 1)
     {
