@@ -1,0 +1,3 @@
+buffoon "oo" gives IndexError and snow in snow leopard
+
+implement reading from txt file
