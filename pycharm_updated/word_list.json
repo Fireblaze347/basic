@@ -2,10 +2,26 @@
 "1":
 ["Snow Leopard", "Leopard", "Cheetah", "Falcon", "Tiger", "Anteater", "Frog", "Elephant", 
 "Horse", "Wolf", "Snake", "Bears", "Human", "Raccoon", "Giraffe", "Goat", "Deer", "Sheep", "Shark", "Otter", "Camel", "Gorilla", "Llama", 
-"Platypus", "Squirrel"],
+"Platypus", "Squirrel", "bison", "fox", "beaver", "sperm whale", "bat", "beluga whale", "grizzly bear", "polar bear", "black bear", "bobcat", "lion"
+,"jaguar", "hyena", "dolphin", "moose", "chimpanzee", "panda", "giraffe"
+],
 
 "2":
 ["Singapore", "Malta", "United States of America", "India", "South Africa", "Democratic Republic of Congo", "South Korea", "Japan", "China", "Malaysia", "Brunei", "Vietnam",
 "Hong Kong", "Mexico", "Brazil", "Chile", "Nepal", "Bangladesh", "Pakistan", "United Arab Emirates", "Italy", "Spain", "norway", "finland", "greenland", "united kingdom", "sweden", "ukraine"
+,"ireland", "argentina", "algeria", "iceland", "indonesia", "nigeria", "myanmar"
+],
+
+"3":
+[ 
+
+
+],
+
+"4":
+["Metroid", "Paper Mario", "Fortnite", "Minecraft", "Dont starve", "silksong", "hollow knight", "baldurs gate three", ""
+
+
 ]
+
 }

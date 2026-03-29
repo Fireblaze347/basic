@@ -1,10 +1,30 @@
-import sys, os, re, random, json
+import sys, subprocess, re, random, json
+
+def get_topic_list(topic_number_as_string :str, json_file_name:str):
+    full_json = read_json(json_file_name)
+    return full_json[topic_number_as_string]
+
+def generate_list_of_indexes(word):
+
+    index_list = []
+    for i in range(int(len(word)/3)):
+        # -1 because len(word) will include 1 but we are starting from 0 as it is an index
+        index_list.append(random.randint(0, len(word) - 1))
+
+    return index_list
 
 def clear():
-    os.system("cls")
+    subprocess.call('cls', shell=True)
 
 def find_topic_choice():
-    return input(" [1] Animals\n [2] Countries\n [3] Food \n [4] Elements\n")
+
+    ans = input(" [1] Animals\n [2] Countries\n [3] Food \n [4] Video Games\n")
+    
+    while not re.search(r"^[1-4]$", ans):
+        clear()
+        ans = input(" [1] Animals\n [2] Countries\n [3] Food \n [4] Elements\n Choose a valid number!\n")
+
+    return ans
 
 def read_json(file_name):
     with open(file_name, 'r') as json_file:
@@ -14,7 +34,7 @@ def read_json(file_name):
 
 
 def main():
-    print(read_json('word_list.json')["1"])
+
     hangman_pictures = ['''
    --------
    |      |
@@ -71,23 +91,18 @@ def main():
   / \	  |
 	  |''']
     
-    
     clear()
 
-    topic_choice = find_topic_choice()
+    selected_list = get_topic_list(find_topic_choice(), "word_list.json")
 
-    match topic_choice:
-        case "1":
-            pass
-            
+    selected_word = random.choice(selected_list)  # the selected word (chosen randomly)
+    selected_word = selected_word.lower()
 
-    selected_word = "united states of america"  # the selected word (chosen randomly)
-    known_letter_indexes = [2, 6]
+    known_letter_indexes = generate_list_of_indexes(selected_word)
     letter_counter = 0
     current_word = []
     wrong_guessed_words = []
     mistakes = 0
-
 
     clear()
 
@@ -162,7 +177,7 @@ def main():
     if wrong_guessed_words:
         print(f"You have guessed {", ".join(wrong_guessed_words)} wrongly already")
     print()
-    print(" ".join(current_word))
+    print(" ".join(selected_word))
     print()
     print("You win!\n")
 
@@ -170,6 +185,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-

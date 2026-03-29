@@ -5,3 +5,5 @@ implement reading from txt file
 known letter indexes random needed
 
 need to replace final letter when won
+
+do number of words /2 round down
