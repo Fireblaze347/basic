@@ -9,19 +9,13 @@
 "2":
 ["Singapore", "Malta", "United States of America", "India", "South Africa", "Democratic Republic of Congo", "South Korea", "Japan", "China", "Malaysia", "Brunei", "Vietnam",
 "Hong Kong", "Mexico", "Brazil", "Chile", "Nepal", "Bangladesh", "Pakistan", "United Arab Emirates", "Italy", "Spain", "norway", "finland", "greenland", "united kingdom", "sweden", "ukraine"
-,"ireland", "argentina", "algeria", "iceland", "indonesia", "nigeria", "myanmar"
+,"ireland", "argentina", "algeria", "iceland", "indonesia", "nigeria", "myanmar", "canada", "australia" , "new zealand"
 ],
 
 "3":
-[ 
-
-
-],
-
-"4":
-["Metroid", "Paper Mario", "Fortnite", "Minecraft", "Dont starve", "silksong", "hollow knight", "baldurs gate three", ""
-
-
+[ "Steak", "Sushi", "Baked Potato", "Cookie", "Donut", "Waffle", "Pizza", "Burger", "Cracker", "banana bread", "chocolate cake", "pancake", "carrot", "duck noodles", "apricot", "french fries", "ice cream", "miso soup", "mashed potatos", "buffalo wings"
+, "chicken nugget", "roast chicken", "salmon", "onion rings", "pasta", "mac and cheese", "chocolate pudding", "shepards pie", "pumpkin pie", "chicken biryani", "egg roll", "spring roll", "curry puff"
+,"samosa", "salad", "taco"
 ]
 
 }

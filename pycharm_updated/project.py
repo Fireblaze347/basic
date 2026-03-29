@@ -7,7 +7,7 @@ def get_topic_list(topic_number_as_string :str, json_file_name:str):
 def generate_list_of_indexes(word):
 
     index_list = []
-    for i in range(int(len(word)/3)):
+    for i in range(int(len(word)/6)):
         # -1 because len(word) will include 1 but we are starting from 0 as it is an index
         index_list.append(random.randint(0, len(word) - 1))
 
@@ -18,7 +18,7 @@ def clear():
 
 def find_topic_choice():
 
-    ans = input(" [1] Animals\n [2] Countries\n [3] Food \n [4] Video Games\n")
+    ans = input(" [1] Animals\n [2] Countries\n [3] Food \n")
     
     while not re.search(r"^[1-4]$", ans):
         clear()
@@ -31,7 +31,6 @@ def read_json(file_name):
         json_data = json.load(json_file)
         
     return json_data
-
 
 def main():
 
@@ -95,8 +94,8 @@ def main():
 
     selected_list = get_topic_list(find_topic_choice(), "word_list.json")
 
-    selected_word = random.choice(selected_list)  # the selected word (chosen randomly)
-    selected_word = selected_word.lower()
+    selected_word = random.choice(selected_list).lower()  # the selected word (chosen randomly)
+
 
     known_letter_indexes = generate_list_of_indexes(selected_word)
     letter_counter = 0
