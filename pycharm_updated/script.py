@@ -1,3 +1,16 @@
+import project
+
+print(project.generate_list_of_indexes("tabby cat of the extreme and utter caliber"))
+print("".join(project.make_word_blanks("cat", [0])))
+
+
+
+
+
+
+
+
+
 # selected_word = "snow leopard"
 # user_letter = "snow"
 # M_selected_word = []
@@ -11,13 +24,13 @@
 #             break
 
 # print(user_letter_index)
-import random
-def generate_list_of_indexes(word):
+# import random
+# def generate_list_of_indexes(word):
 
-    index_list = []
-    for i in range(int(len(word)/2)):
-        index_list.append(random.randint(0,len(word)))
+#     index_list = []
+#     for i in range(int(len(word)/2)):
+#         index_list.append(random.randint(0,len(word)))
 
-    return index_list
+#     return index_list
 
-print(generate_list_of_indexes("hello"))
+# print(generate_list_of_indexes("hello"))

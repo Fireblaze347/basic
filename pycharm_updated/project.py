@@ -14,7 +14,7 @@ def generate_list_of_indexes(word):
     return index_list
 
 def clear():
-    subprocess.call('cls', shell=True)
+    subprocess.call('clear', shell=True)
 
 def find_topic_choice():
 
@@ -22,7 +22,7 @@ def find_topic_choice():
     
     while not re.search(r"^[1-4]$", ans):
         clear()
-        ans = input(" [1] Animals\n [2] Countries\n [3] Food \n [4] Elements\n Choose a valid number!\n")
+        ans = input(" [1] Animals\n [2] Countries\n [3] Food \n Choose a valid number!\n")
 
     return ans
 
@@ -31,6 +31,22 @@ def read_json(file_name):
         json_data = json.load(json_file)
         
     return json_data
+
+def make_word_blanks(selected_wordF, known_letter_indexesF):
+     
+     current_wordF = []
+     letter_counter = 0
+     for letter in selected_wordF:
+        ###cu
+        if letter_counter in known_letter_indexesF or letter == " ":
+            current_wordF.append(letter)
+        
+        else:
+            current_wordF.append("_")
+        letter_counter += 1
+
+     return current_wordF
+
 
 def main():
 
@@ -96,31 +112,24 @@ def main():
 
     selected_word = random.choice(selected_list).lower()  # the selected word (chosen randomly)
 
-
     known_letter_indexes = generate_list_of_indexes(selected_word)
-    letter_counter = 0
     current_word = []
     wrong_guessed_words = []
     mistakes = 0
 
     clear()
 
+    current_word = make_word_blanks(selected_word, known_letter_indexes)
+
     # FYI they are allowed 6 mistakes
-    for letter in selected_word:
-        ###cu
-        if letter_counter in known_letter_indexes or letter == " ":
-            current_word.append(letter)
-        
-        else:
-            current_word.append("_")
-        letter_counter += 1
+   
 
     # Game loop
     while True:
         print(hangman_pictures[mistakes])
         if wrong_guessed_words:
             print(f"You have guessed {", ".join(wrong_guessed_words)} wrongly already")
-        print()
+        print() 
         print(" ".join(current_word))
         print()
         
