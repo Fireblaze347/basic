@@ -5,7 +5,6 @@ def get_topic_list(topic_number_as_string :str, json_file_name:str):
     return full_json[topic_number_as_string]
 
 def generate_list_of_indexes(word):
-
     index_list = []
     for i in range(int(len(word)/6)):
         # -1 because len(word) will include 1 but we are starting from 0 as it is an index
@@ -17,7 +16,6 @@ def clear():
     subprocess.call('clear', shell=True)
 
 def find_topic_choice():
-
     ans = input(" [1] Animals\n [2] Countries\n [3] Food \n")
     
     while not re.search(r"^[1-4]$", ans):
@@ -32,8 +30,7 @@ def read_json(file_name):
         
     return json_data
 
-def make_word_blanks(selected_wordF, known_letter_indexesF):
-     
+def make_word_blanks(selected_wordF, known_letter_indexesF): 
      current_wordF = []
      letter_counter = 0
      for letter in selected_wordF:
@@ -46,6 +43,13 @@ def make_word_blanks(selected_wordF, known_letter_indexesF):
         letter_counter += 1
 
      return current_wordF
+
+
+
+def find_elements_in_list(list, element):
+    #https://stackoverflow.com/questions/6294179/how-to-find-all-occurrences-of-an-element-in-a-list
+    
+    return [i for i, x in enumerate(list) if x == element]
 
 
 def main():
@@ -142,10 +146,7 @@ def main():
 
             if user_letter in selected_word:
                 # Check for multiple entries of a letter! IMPORTANT!
-
-                #https://stackoverflow.com/questions/6294179/how-to-find-all-occurrences-of-an-element-in-a-list
-                user_letter_index = [i for i, x in enumerate(selected_word) if x == user_letter]  # A LIST CONTAINING INDEXES (ints)
-
+                user_letter_index = find_elements_in_list(selected_word, user_letter)
 
                 # TRUE if more than one item
                 if len(user_letter_index) > 1:
